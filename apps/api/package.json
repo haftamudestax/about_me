@@ -7,5 +7,10 @@
     "build": "tsc",
     "lint": "eslint .",
     "test": "vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.6.0",
+    "typescript-eslint": "^8.62.1"
   }
 }
