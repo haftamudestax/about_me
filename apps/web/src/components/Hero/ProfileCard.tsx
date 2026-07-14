@@ -1,4 +1,4 @@
-import { Card, CardMedia } from "@mui/material";
+import { Card, CardMedia, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
 type ProfileCardProps = {
@@ -7,7 +7,7 @@ type ProfileCardProps = {
 };
 
 export function ProfileCard({
-  imageSrc = "/haftamu.jpg",
+  imageSrc = "/images/haftamu_d.jpg",
   alt = "Portrait photo of Hafta",
 }: ProfileCardProps) {
   return (
@@ -18,14 +18,32 @@ export function ProfileCard({
     >
       <Card
         elevation={0}
-        className="!overflow-hidden !rounded-3xl !border !border-slate-200 !shadow-lg !shadow-slate-900/10"
+        className="!relative !overflow-hidden !rounded-3xl !border !border-slate-200 !shadow-lg !shadow-slate-900/10"
       >
-        <CardMedia
-          component="img"
-          image={imageSrc}
-          alt={alt}
-          className="!aspect-square !object-cover"
-        />
+        <div className="relative">
+          <CardMedia
+            component="img"
+            image={imageSrc}
+            alt={alt}
+            className="!aspect-square !object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-900/10 to-transparent" />
+
+          <div className="absolute inset-x-0 bottom-0 p-4">
+            <Typography
+              component="p"
+              className="bg-linear-to-r! from-cyan-400! to-teal-500! bg-clip-text! text-sm! font-semibold! leading-tight! text-transparent!"
+            >
+              Full-Stack Developer
+            </Typography>
+            <Typography
+              component="p"
+              className="bg-linear-to-r! from-amber-300! to-orange-500! bg-clip-text! text-sm! font-semibold! leading-tight! text-transparent!"
+            >
+              &amp; Electrical Engineer
+            </Typography>
+          </div>
+        </div>
       </Card>
     </motion.div>
   );

@@ -22,14 +22,14 @@ export function HeroIntro({ onCtaClick }: HeroIntroProps) {
 
       <Typography
         component="p"
-        className="mt-2! text-lg! font-medium! text-teal-600! md:text-xl!"
+        className="text-2xl! font-bold! bg-linear-to-r from-blue-800 via-purple-500 to-red-300 bg-clip-text text-transparent"
       >
         Full-Stack Developer &amp; Electrical Engineer
       </Typography>
 
       <Typography
         component="p"
-        className="mt-4! !text-base !leading-relaxed !text-slate-600"
+        className="mt-4! text-base! leading-relaxed! text-slate-600!"
       >
         I build thoughtful, reliable web experiences from frontend to backend
         turning ideas into products people actually enjoy using. When I&apos;m
@@ -37,17 +37,17 @@ export function HeroIntro({ onCtaClick }: HeroIntroProps) {
         place.
       </Typography>
 
-      <Stack direction="row" spacing={2} className="!mt-6">
+      <Stack direction="row" spacing={2} className="mt-6!">
         <Button
           variant="contained"
           onClick={onCtaClick}
-          className="!rounded-full !bg-teal-600 !px-6 !normal-case hover:!bg-teal-700"
+          className="rounded-full! bg-teal-600! px-6! normal-case hover:bg-teal-700!"
         >
           View My Work
         </Button>
         <Button
           variant="outlined"
-          className="!rounded-full !border-slate-300 !px-6 !normal-case !text-slate-700 hover:!border-slate-400"
+          className="rounded-full! border-slate-300! px-6! normal-case! text-slate-700! hover:border-slate-400!"
         >
           Contact Me
         </Button>
