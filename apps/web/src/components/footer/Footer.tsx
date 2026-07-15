@@ -3,7 +3,7 @@ import {
   FaLinkedin,
   FaFacebook,
   FaShareAlt,
-  FaExternalLinkAlt,
+  FaGift,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -24,32 +24,33 @@ export default function Footer() {
     }
   };
 
+  const handleRefer = async () => {
+    const referralUrl = window.location.href;
+    const subject = encodeURIComponent("Check out Haftamu's About Me page");
+    const body = encodeURIComponent(`Thought you'd like this: ${referralUrl}`);
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Refer a friend",
+          text: "Thought you'd like this page",
+          url: referralUrl,
+        });
+        return;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  };
+
   return (
     <footer className="bg-linear-to-br from-slate-950 via-slate-900 to-blue-950 text-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
-            <h3 className="text-xl font-semibold mb-4">About Me</h3>
-
-            <a
-              href="https://portfolio-haftamudesta.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-xl border border-slate-700 bg-slate-800/40 p-5 hover:border-blue-500 hover:bg-slate-800 transition"
-            >
-              <h4 className="flex items-center gap-2 text-lg font-medium">
-                My Portfolio
-                <FaExternalLinkAlt className="text-sm group-hover:text-blue-400" />
-              </h4>
-
-              <p className="mt-2 text-sm text-slate-300">
-                Explore my Portfolio to Learn more About Me, my Experience,
-                Projects, Technical Skills, and Professional Journey.
-              </p>
-            </a>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
+            <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
 
             <div className="flex gap-6 text-3xl">
               <a
@@ -83,8 +84,21 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
           <div>
-            <h3 className="text-xl font-semibold mb-4">Share</h3>
+            <h3 className="text-xl font-semibold mb-4">Refer Me</h3>
+
+            <button
+              onClick={handleRefer}
+              className="flex items-center gap-3 rounded-lg bg-purple-600 px-5 py-3 hover:bg-purple-700 transition"
+            >
+              <FaGift />
+              Give Referrals
+            </button>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Share Page</h3>
 
             <button
               onClick={handleShare}
@@ -93,6 +107,13 @@ export default function Footer() {
               <FaShareAlt />
               Share This Page
             </button>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-4">About</h3>
+            <p className="text-emerald-400 font-bold">
+              Passionate Full-Stack Developer
+            </p>
           </div>
         </div>
 
