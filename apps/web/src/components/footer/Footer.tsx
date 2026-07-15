@@ -46,13 +46,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-linear-to-br from-slate-950 via-slate-900 to-blue-950 text-white">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
-
-            <div className="flex gap-6 text-3xl">
+    <footer className="bg-linear-to-br from-slate-950 via-slate-900 teal-950 text-white">
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:divide-x md:divide-slate-700">
+          <div className="md:pr-6">
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">
+              Follow Me
+            </h3>
+            <div className="flex gap-4 text-2xl">
               <a
                 href="https://www.linkedin.com/in/haftamudesta/"
                 target="_blank"
@@ -85,46 +86,46 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Refer Me</h3>
-
-            <button
-              onClick={handleRefer}
-              className="flex items-center gap-3 rounded-lg bg-purple-600 px-5 py-3 hover:bg-purple-700 transition"
-            >
-              <FaGift />
-              Give Referrals
-            </button>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Share Page</h3>
-
+          <div className="md:px-6">
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">
+              Share Page
+            </h3>
             <button
               onClick={handleShare}
-              className="flex items-center gap-3 rounded-lg bg-blue-600 px-5 py-3 hover:bg-blue-700 transition"
+              className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm hover:bg-blue-700 transition"
             >
               <FaShareAlt />
               Share This Page
             </button>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-4">About</h3>
-            <p className="text-emerald-400 font-bold">
+          <div className="md:px-6">
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">
+              Refer Me
+            </h3>
+            <button
+              onClick={handleRefer}
+              className="flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-sm hover:bg-purple-700 transition"
+            >
+              <FaGift />
+              Give Referrals
+            </button>
+          </div>
+
+          <div className="md:px-6">
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">
+              About
+            </h3>
+            <p className="text-sm font-semibold text-emerald-400">
               Passionate Full-Stack Developer
             </p>
           </div>
-        </div>
 
-        <div className="mt-10 border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Haftamu Desta. All rights reserved.
-          </p>
-
-          <p className="text-sm md:text-xl font-bold text-slate-400">
-            Built with Xcelsz Tech Stacks
-          </p>
+          <div className="md:pl-6 md:ml-auto">
+            <p className="text-sm text-sky-400">
+              © {new Date().getFullYear()} Haftamu Desta. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
